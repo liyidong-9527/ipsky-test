@@ -1,0 +1,31 @@
+/**
+ * 提交模板：git commit -m 'type(scope): subject'
+ * type是下面types中的一个,必有
+ * (scope)是可选的
+ * subject必有(描述信息)
+ * Tips: :后面有个空格
+ * 提交示例：git commit -m 'feat(案件): 案件信息调整'
+ */
+
+const types = [
+  'feat', // 新功能（feature）
+  'fix', // 修补bug
+  'docs', // 文档（documentation）
+  'style', // 格式（不影响代码运行的变动）
+  'refactor', // 重构（即不是新增功能，也不是修改bug的代码变动）
+  'test', // 增加测试
+  'revert', // 回滚
+  'config', // 构建过程或辅助工具的变动
+  'chore', // 其他改动
+];
+
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-empty': [2, 'never'],
+    'type-enum': [2, 'always', types],
+    'scope-case': [0, 'always'],
+    'subject-empty': [2, 'never'],
+    'subject-case': [0, 'never'],
+  },
+};

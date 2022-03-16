@@ -1,0 +1,62 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "extends": ["taro/react"],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+  "@typescript-eslint/no-unused-vars": ["error"],
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "import/prefer-default-export": "off",
+      "react/jsx-filename-extension": [
+        "warn",
+        {
+          "extensions": [".tsx"]
+        }
+      ],
+      "jsx-quotes": ["error", "prefer-single"],
+      "object-curly-newline": [
+        "error",
+        {
+          "ObjectPattern": {
+            "multiline": true,
+            "minProperties": 10
+          }
+        }
+      ],
+      "react/no-unstable-nested-components": [
+        "off",
+        { "allowAsProps": true }
+      ],
+      "no-unsafe-optional-chaining": ["off",{ "disallowArithmeticOperators": true }], // 允许问号访问
+      // 箭头函数
+      "arrow-parens": ["error", "as-needed"], // 参数括号必有，一个参数可省
+      "react/function-component-definition": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "react/jsx-props-no-spreading": 0,
+      "react/no-danger": 0,
+      "react/display-name": 0,
+      "no-unused-vars": 0,
+      "react-hooks/rules-of-hooks": "error", // 检查 Hook 的规则
+      "react-hooks/exhaustive-deps": "warn", // 检查 effect 的依赖
+      "camelcase": ["error", { "properties": "never" }], // 驼峰，属性值不检查
+      "no-nested-ternary": "off" // 允许三目运算符
+    
+   
+  }, "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+}
